@@ -1,0 +1,25 @@
+name: noon_tracker_server
+description: سيرفر مركزي لمراقبة والتحكم بتطبيق تتبع أسعار نون
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  # HTTP Server
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
+  shelf_cors_headers: ^0.1.5
+  shelf_static: ^1.1.2
+  
+  # Database
+  sqlite3: ^2.4.0
+  path: ^1.9.0
+  
+  # Utilities
+  args: ^2.4.2
+  crypto: ^3.0.3
+  
+dev_dependencies:
+  lints: ^3.0.0
