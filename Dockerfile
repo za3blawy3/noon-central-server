@@ -20,6 +20,8 @@ WORKDIR /app
 
 # نسخ الملفات المطلوبة من مرحلة البناء
 COPY --from=build /app /app
+# نسخ التبعيات المثبتة
+COPY --from=build /root/.pub-cache /root/.pub-cache
 
 # تعيين المتغير البيئي للمنفذ
 ENV PORT=3000
