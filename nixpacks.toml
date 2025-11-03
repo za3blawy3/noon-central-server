@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["dart"]
+
+[phases.build]
+cmds = ["dart pub get"]
+
+[start]
+cmd = "dart run bin/server.dart"
