@@ -1,6 +1,9 @@
 # استخدام صورة Dart الرسمية
 FROM dart:stable AS build
 
+# تثبيت SQLite3
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev && rm -rf /var/lib/apt/lists/*
+
 # تعيين مجلد العمل
 WORKDIR /app
 
@@ -15,6 +18,9 @@ RUN dart pub get --offline
 
 # المرحلة النهائية
 FROM dart:stable
+
+# تثبيت SQLite3 في المرحلة النهائية أيضاً
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
